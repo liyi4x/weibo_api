@@ -63,7 +63,7 @@ class DbFilter:
 
     def get_data_by_time(self):
         if 'from' not in self.args and 'to' not in self.args:
-            sql = "SELECT * FROM  `weibo_topdata_all` ORDER BY `time` DESC,  `pos` LIMIT 50"
+            sql = "SELECT * FROM  `weibo_topdata_realtime`"
         elif 'to' not in self.args:
             sql = "SELECT * FROM  `weibo_topdata_all` WHERE `time` >= from_unixtime({0},'%Y-%m-%d %H:%i:%s')".format(self.args['from'])
         elif 'from' not in self.args:
